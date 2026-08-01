@@ -238,7 +238,7 @@ SECTIONS
 
 ========================================================*/
 
-section{
+section:not(.hero){
 
 padding:120px 0;
 
@@ -690,24 +690,21 @@ HERO
 
 .hero{
 
-margin-top:90px;
-
 width:100%;
+
+margin:0;
 
 padding:0;
 
-display:flex;
+display:block;
 
-justify-content:center;
+line-height:0;
 
-align-items:center;
-
-background:var(--ivory);
+background:transparent;
 
 overflow:hidden;
 
 }
-
 
 .hero-banner{
 
@@ -717,9 +714,13 @@ width:100%;
 
 height:auto;
 
-object-fit:cover;
+margin:0;
 
-box-shadow:0 20px 60px rgba(0,0,0,.12);
+padding:0;
+
+border:0;
+
+box-shadow:none;
 
 }
 
