@@ -1,8 +1,8 @@
 /*========================================================
 
-TABLE OF CONTENTS
+CHANGED
 
-STYLESHEET
+TABLE OF CONTENTS STYLESHEET
 
 Author: Bradley Hobbs
 Version: 2.0
@@ -13,7 +13,9 @@ PART 1
 
 
 /*========================================================
+
 ROOT VARIABLES
+
 ========================================================*/
 
 :root{
@@ -41,6 +43,7 @@ ROOT VARIABLES
 --border:#ece6db;
 
 --shadow:0 20px 50px rgba(0,0,0,.10);
+
 --shadow-large:0 35px 90px rgba(0,0,0,.16);
 
 --radius:20px;
@@ -48,13 +51,16 @@ ROOT VARIABLES
 --transition:.35s ease;
 
 --width:1200px;
+
 --narrow:860px;
 
 }
 
 
 /*========================================================
+
 RESET
+
 ========================================================*/
 
 *,
@@ -78,6 +84,7 @@ body{
 font-family:"Inter",sans-serif;
 
 font-size:18px;
+
 line-height:1.9;
 
 background:var(--cream);
@@ -94,7 +101,9 @@ text-rendering:optimizeLegibility;
 
 
 /*========================================================
+
 BACKGROUND
+
 ========================================================*/
 
 body::before{
@@ -125,7 +134,9 @@ z-index:-1;
 
 
 /*========================================================
+
 TYPOGRAPHY
+
 ========================================================*/
 
 h1,
@@ -189,9 +200,9 @@ blockquote{
 
 font-family:"Cormorant Garamond",serif;
 
-font-style:italic;
+font-size:2.2rem;
 
-font-size:2.25rem;
+font-style:italic;
 
 line-height:1.6;
 
@@ -207,7 +218,9 @@ margin:60px auto;
 
 
 /*========================================================
+
 LINKS
+
 ========================================================*/
 
 a{
@@ -228,7 +241,9 @@ color:var(--purple);
 
 
 /*========================================================
+
 IMAGES
+
 ========================================================*/
 
 img{
@@ -241,11 +256,6 @@ height:auto;
 
 }
 
-
-/*========================================================
-LISTS
-========================================================*/
-
 ul{
 
 list-style:none;
@@ -254,7 +264,9 @@ list-style:none;
 
 
 /*========================================================
+
 LAYOUT
+
 ========================================================*/
 
 .container{
@@ -275,7 +287,7 @@ margin-inline:auto;
 
 section:not(.hero){
 
-padding:110px 0;
+padding:100px 0;
 
 position:relative;
 
@@ -283,7 +295,9 @@ position:relative;
 
 
 /*========================================================
+
 PROGRESS BAR
+
 ========================================================*/
 
 #progress-bar{
@@ -291,6 +305,7 @@ PROGRESS BAR
 position:fixed;
 
 top:0;
+
 left:0;
 
 width:0;
@@ -315,7 +330,9 @@ z-index:5000;
 
 
 /*========================================================
+
 NAVIGATION
+
 ========================================================*/
 
 .navbar{
@@ -350,7 +367,9 @@ padding:20px 0;
 
 
 /*========================================================
+
 LOGO
+
 ========================================================*/
 
 .logo{
@@ -377,7 +396,9 @@ color:var(--gold);
 
 
 /*========================================================
+
 NAVIGATION MENU
+
 ========================================================*/
 
 .navigation{
@@ -387,6 +408,8 @@ display:flex;
 align-items:center;
 
 gap:34px;
+
+list-style:none;
 
 }
 
@@ -409,6 +432,7 @@ content:"";
 position:absolute;
 
 left:0;
+
 bottom:0;
 
 width:0;
@@ -436,7 +460,9 @@ color:var(--purple);
 
 
 /*========================================================
+
 MOBILE NAVIGATION
+
 ========================================================*/
 
 .nav-toggle{
@@ -471,7 +497,9 @@ transition:var(--transition);
 
 
 /*========================================================
+
 HERO
+
 ========================================================*/
 
 .hero{
@@ -496,23 +524,19 @@ height:auto;
 
 }
 
-
 /*========================================================
-PAGE HEADER
+
+CONTENTS HEADER
+
 ========================================================*/
 
 .contents-header{
 
 background:
-
 linear-gradient(
-
 180deg,
-
 var(--ivory),
-
 var(--cream)
-
 );
 
 text-align:center;
@@ -549,11 +573,11 @@ margin-bottom:35px;
 
 .contents-introduction{
 
-max-width:720px;
+max-width:760px;
 
 margin-inline:auto;
 
-font-size:1.12rem;
+font-size:1.15rem;
 
 line-height:2;
 
@@ -588,13 +612,8 @@ transparent
 
 /*========================================================
 
-END OF PART 1
+CONTENTS LIST
 
-========================================================*/
-
-
-/*========================================================
-TABLE OF CONTENTS
 ========================================================*/
 
 .contents-list{
@@ -609,14 +628,9 @@ max-width:900px;
 
 }
 
-
-/*========================================================
-SECTION HEADINGS
-========================================================*/
-
 .contents-section{
 
-margin:0 0 30px;
+margin:0 0 35px;
 
 font-size:2rem;
 
@@ -632,18 +646,13 @@ margin-top:80px;
 
 }
 
-
-/*========================================================
-DIVIDERS
-========================================================*/
-
 .contents-divider{
 
 width:100%;
 
 height:2px;
 
-margin:70px auto;
+margin:60px auto;
 
 background:
 
@@ -663,7 +672,9 @@ transparent
 
 
 /*========================================================
+
 FRONT MATTER LINKS
+
 ========================================================*/
 
 .contents-item{
@@ -674,15 +685,11 @@ justify-content:space-between;
 
 align-items:center;
 
-padding:22px 24px;
-
-margin-bottom:10px;
-
-background:transparent;
+padding:24px 10px;
 
 border-bottom:1px solid var(--border);
 
-font-size:1.08rem;
+font-size:1.12rem;
 
 font-weight:600;
 
@@ -692,7 +699,7 @@ transition:var(--transition);
 
 .contents-item:hover{
 
-padding-left:38px;
+padding-left:24px;
 
 background:rgba(101,69,157,.04);
 
@@ -708,19 +715,13 @@ font-weight:700;
 
 color:var(--gold);
 
-transition:var(--transition);
-
-}
-
-.contents-item:hover span:last-child{
-
-transform:translateX(6px);
-
 }
 
 
 /*========================================================
+
 CHAPTER CARDS
+
 ========================================================*/
 
 .chapter-entry{
@@ -733,23 +734,15 @@ align-items:center;
 
 gap:40px;
 
-padding:34px 38px;
+padding:40px;
 
-margin-bottom:24px;
+margin-bottom:30px;
 
-background:linear-gradient(
-
-180deg,
-
-var(--white),
-
-#fcfbf9
-
-);
-
-border:1px solid var(--border);
+background:var(--ivory);
 
 border-radius:var(--radius);
+
+border-left:6px solid transparent;
 
 box-shadow:var(--shadow);
 
@@ -767,9 +760,9 @@ content:"";
 
 position:absolute;
 
-left:0;
-
 top:0;
+
+left:0;
 
 width:100%;
 
@@ -799,9 +792,9 @@ transition:var(--transition);
 
 transform:translateY(-8px);
 
-box-shadow:var(--shadow-large);
+border-left-color:var(--gold);
 
-border-color:rgba(200,164,93,.35);
+box-shadow:var(--shadow-large);
 
 }
 
@@ -811,14 +804,15 @@ transform:scaleX(1);
 
 }
 
+.chapter-entry div{
 
-/*========================================================
-CHAPTER TEXT
-========================================================*/
+flex:1;
+
+}
 
 .chapter-number{
 
-margin-bottom:10px;
+margin-bottom:12px;
 
 font-size:.82rem;
 
@@ -836,18 +830,13 @@ color:var(--gold);
 
 margin:0;
 
-font-size:1.9rem;
+font-size:2rem;
 
 line-height:1.3;
 
 color:var(--navy);
 
 }
-
-
-/*========================================================
-READ LINK
-========================================================*/
 
 .chapter-entry span{
 
@@ -856,6 +845,8 @@ font-size:1rem;
 font-weight:700;
 
 white-space:nowrap;
+
+margin-left:35px;
 
 color:var(--purple);
 
@@ -871,29 +862,19 @@ transform:translateX(6px);
 
 }
 
-
 /*========================================================
 
-END OF PART 2
-
-========================================================*/
-
-/*========================================================
 JOURNEY CALLOUT
+
 ========================================================*/
 
 .journey-callout{
 
 background:
-
 linear-gradient(
-
 135deg,
-
 var(--purple),
-
 var(--teal)
-
 );
 
 text-align:center;
@@ -928,13 +909,13 @@ font-size:1.08rem;
 
 line-height:2;
 
-color:rgba(255,255,255,.94);
+color:rgba(255,255,255,.95);
 
 }
 
 .journey-callout blockquote{
 
-margin:60px auto;
+margin:70px auto;
 
 font-family:"Cormorant Garamond",serif;
 
@@ -950,7 +931,9 @@ color:var(--white);
 
 
 /*========================================================
+
 BUTTONS
+
 ========================================================*/
 
 .button-group{
@@ -959,11 +942,9 @@ display:flex;
 
 justify-content:center;
 
-align-items:center;
+gap:20px;
 
 flex-wrap:wrap;
-
-gap:20px;
 
 margin-top:50px;
 
@@ -973,9 +954,9 @@ margin-top:50px;
 
 display:inline-flex;
 
-justify-content:center;
-
 align-items:center;
+
+justify-content:center;
 
 padding:18px 42px;
 
@@ -983,9 +964,9 @@ border-radius:999px;
 
 font-weight:600;
 
-transition:var(--transition);
-
 cursor:pointer;
+
+transition:var(--transition);
 
 }
 
@@ -1141,7 +1122,9 @@ align-items:flex-end;
 
 
 /*========================================================
+
 FOOTER
+
 ========================================================*/
 
 footer{
@@ -1172,7 +1155,7 @@ margin-bottom:16px;
 
 .footer-brand p{
 
-margin-bottom:0;
+margin:0;
 
 font-size:1.08rem;
 
@@ -1232,7 +1215,7 @@ margin:0 auto 25px;
 
 font-size:1.8rem;
 
-line-height:1.75;
+line-height:1.7;
 
 color:rgba(255,255,255,.95);
 
@@ -1266,9 +1249,10 @@ color:rgba(255,255,255,.65);
 
 }
 
-
 /*========================================================
+
 SCROLL TO TOP
+
 ========================================================*/
 
 #scrollTop{
@@ -1307,11 +1291,11 @@ cursor:pointer;
 
 box-shadow:var(--shadow);
 
+transition:var(--transition);
+
 opacity:0;
 
 visibility:hidden;
-
-transition:var(--transition);
 
 z-index:999;
 
@@ -1335,7 +1319,9 @@ box-shadow:var(--shadow-large);
 
 
 /*========================================================
-FADE ANIMATION
+
+FADE ANIMATIONS
+
 ========================================================*/
 
 .fade-up{
@@ -1352,19 +1338,15 @@ transition:.8s ease;
 
 opacity:1;
 
-transform:translateY(0);
+transform:none;
 
 }
 
 
 /*========================================================
 
-END OF PART 3
-
-========================================================*/
-
-/*========================================================
 TABLET
+
 ========================================================*/
 
 @media (max-width:900px){
@@ -1391,7 +1373,7 @@ align-items:flex-start;
 
 padding:45px;
 
-gap:25px;
+gap:24px;
 
 box-shadow:-12px 0 40px rgba(0,0,0,.12);
 
@@ -1431,7 +1413,7 @@ align-items:flex-start;
 
 gap:25px;
 
-padding:30px;
+padding:32px;
 
 }
 
@@ -1461,6 +1443,16 @@ gap:25px;
 
 }
 
+.chapter-link{
+
+width:100%;
+
+padding:24px 28px;
+
+min-height:100px;
+
+}
+
 .previous,
 .center-link,
 .next{
@@ -1468,6 +1460,8 @@ gap:25px;
 text-align:center;
 
 align-items:center;
+
+justify-content:center;
 
 }
 
@@ -1481,7 +1475,9 @@ gap:18px 24px;
 
 
 /*========================================================
+
 MOBILE
+
 ========================================================*/
 
 @media (max-width:640px){
@@ -1514,27 +1510,25 @@ font-size:1.6rem;
 
 .contents-header h1{
 
-font-size:2.3rem;
+font-size:2.35rem;
 
 }
 
 .contents-introduction{
 
-font-size:1rem;
+font-size:1.05rem;
 
 }
 
 .contents-section{
 
-font-size:1.6rem;
-
-margin-bottom:24px;
+font-size:1.75rem;
 
 }
 
 .contents-item{
 
-padding:18px 0;
+padding:20px 5px;
 
 font-size:1rem;
 
@@ -1542,7 +1536,13 @@ font-size:1rem;
 
 .chapter-entry{
 
-padding:28px 24px;
+padding:28px;
+
+}
+
+.chapter-entry h2{
+
+font-size:1.6rem;
 
 }
 
@@ -1552,33 +1552,29 @@ letter-spacing:2px;
 
 }
 
-.chapter-entry h2{
-
-font-size:1.55rem;
-
-}
-
 .chapter-link{
+
+width:100%;
 
 padding:24px;
 
-}
+text-align:center;
 
-.chapter-link strong{
+align-items:center;
 
-font-size:1rem;
+justify-content:center;
 
 }
 
 blockquote{
 
-font-size:1.8rem;
+font-size:1.9rem;
 
 }
 
-.journey-callout blockquote{
+.button{
 
-font-size:2rem;
+width:100%;
 
 }
 
@@ -1586,7 +1582,7 @@ font-size:2rem;
 
 flex-direction:column;
 
-gap:18px;
+gap:16px;
 
 margin:45px auto;
 
@@ -1594,7 +1590,7 @@ margin:45px auto;
 
 .footer-scripture blockquote{
 
-font-size:1.35rem;
+font-size:1.4rem;
 
 }
 
@@ -1608,11 +1604,12 @@ font-size:.85rem;
 
 
 /*========================================================
+
 ACCESSIBILITY
+
 ========================================================*/
 
 a:focus,
-
 button:focus{
 
 outline:3px solid var(--gold);
@@ -1627,17 +1624,11 @@ font-family:inherit;
 
 }
 
-img{
-
-max-width:100%;
-
-height:auto;
-
-}
-
 
 /*========================================================
+
 REDUCED MOTION
+
 ========================================================*/
 
 @media (prefers-reduced-motion:reduce){
@@ -1656,7 +1647,9 @@ scroll-behavior:auto!important;
 
 
 /*========================================================
+
 PRINT
+
 ========================================================*/
 
 @media print{
@@ -1669,9 +1662,9 @@ PRINT
 
 .chapter-navigation,
 
-.button-group,
+footer,
 
-footer{
+.button-group{
 
 display:none;
 
@@ -1695,7 +1688,9 @@ padding:30px 0;
 
 
 /*========================================================
+
 UTILITY CLASSES
+
 ========================================================*/
 
 .text-center{
@@ -1751,9 +1746,9 @@ margin-bottom:60px;
 
 END OF FILE
 
-TABLE OF CONTENTS
+CHANGED
 
-STYLESHEET
+TABLE OF CONTENTS STYLESHEET
 
 Author:
 Bradley Hobbs
