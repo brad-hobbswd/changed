@@ -1,434 +1,325 @@
-/*====================================================
+/*========================================================
 
 CHANGED
 
 HOME JAVASCRIPT
 
-====================================================*/
+Author: Bradley Hobbs
+
+========================================================*/
 
 
 document.addEventListener("DOMContentLoaded", () => {
 
-initializeNavigation();
+    initializeNavigation();
 
-initializeScrollTop();
+    initializeScrollTop();
 
-initializeAnimations();
+    initializeAnimations();
 
-initializeParallax();
-
-initializeCurrentYear();
+    initializeParallax();
 
 });
 
 
-/*====================================================
+/*========================================================
 
-STICKY NAVIGATION
+NAVIGATION
 
-====================================================*/
+========================================================*/
 
 function initializeNavigation(){
 
-const navbar = document.querySelector(".navbar");
+    const navbar = document.querySelector(".navbar");
 
-window.addEventListener("scroll", () => {
+    const navToggle = document.querySelector(".nav-toggle");
 
-if(window.scrollY > 80){
+    const navigation = document.querySelector(".navigation");
 
-navbar.classList.add("scrolled");
+    window.addEventListener("scroll", () => {
 
-}else{
+        if(window.scrollY > 60){
 
-navbar.classList.remove("scrolled");
+            navbar.classList.add("scrolled");
+
+        }else{
+
+            navbar.classList.remove("scrolled");
+
+        }
+
+    });
+
+    navToggle.addEventListener("click", () => {
+
+        navigation.classList.toggle("active");
+
+        navToggle.classList.toggle("active");
+
+    });
+
+    document.querySelectorAll(".navigation a").forEach(link=>{
+
+        link.addEventListener("click",()=>{
+
+            navigation.classList.remove("active");
+
+            navToggle.classList.remove("active");
+
+        });
+
+    });
 
 }
 
-});
 
-}
-
-
-/*====================================================
-
-MOBILE MENU
-
-====================================================*/
-
-const navToggle = document.querySelector(".nav-toggle");
-
-const navigation = document.querySelector(".navigation");
-
-if(navToggle){
-
-navToggle.addEventListener("click", () => {
-
-navigation.classList.toggle("active");
-
-navToggle.classList.toggle("active");
-
-});
-
-}
-
-document.querySelectorAll(".navigation a").forEach(link=>{
-
-link.addEventListener("click",()=>{
-
-navigation.classList.remove("active");
-
-navToggle.classList.remove("active");
-
-});
-
-});
-
-
-/*====================================================
+/*========================================================
 
 SCROLL TO TOP
 
-====================================================*/
+========================================================*/
 
 function initializeScrollTop(){
 
-const button = document.getElementById("scrollTop");
+    const button = document.getElementById("scrollTop");
 
-window.addEventListener("scroll",()=>{
+    window.addEventListener("scroll",()=>{
 
-if(window.scrollY>500){
+        if(window.scrollY > 500){
 
-button.classList.add("show");
+            button.classList.add("show");
 
-}else{
+        }else{
 
-button.classList.remove("show");
+            button.classList.remove("show");
+
+        }
+
+    });
+
+    button.addEventListener("click",()=>{
+
+        window.scrollTo({
+
+            top:0,
+
+            behavior:"smooth"
+
+        });
+
+    });
 
 }
 
-});
 
-button.addEventListener("click",()=>{
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-});
-
-}
-
-
-/*====================================================
+/*========================================================
 
 FADE ANIMATIONS
 
-====================================================*/
+========================================================*/
 
 function initializeAnimations(){
 
-const observer = new IntersectionObserver((entries)=>{
+    const observer = new IntersectionObserver(entries=>{
 
-entries.forEach(entry=>{
+        entries.forEach(entry=>{
 
-if(entry.isIntersecting){
+            if(entry.isIntersecting){
 
-entry.target.classList.add("visible");
+                entry.target.classList.add("visible");
+
+            }
+
+        });
+
+    },{
+
+        threshold:.15
+
+    });
+
+    document.querySelectorAll(
+
+        ".welcome, .book-overview, .featured-scripture, .journey, .author-preview, .callout, .chapter-card"
+
+    ).forEach(section=>{
+
+        section.classList.add("fade-up");
+
+        observer.observe(section);
+
+    });
 
 }
 
-});
 
-},{
+/*========================================================
 
-threshold:.15
+PARALLAX HERO
 
-});
-
-document.querySelectorAll(
-
-".welcome,.book-overview,.featured-scripture,.journey,.author-preview,.cta,.chapter-card"
-
-).forEach(section=>{
-
-section.classList.add("fade-up");
-
-observer.observe(section);
-
-});
-
-}
-
-/*====================================================
-
-HERO PARALLAX
-
-====================================================*/
+========================================================*/
 
 function initializeParallax(){
 
-const hero = document.querySelector(".hero");
+    const banner = document.querySelector(".hero-banner");
 
-if(!hero) return;
+    if(!banner) return;
 
-window.addEventListener("scroll",()=>{
+    window.addEventListener("scroll",()=>{
 
-const offset = window.pageYOffset;
+        const offset = window.scrollY;
 
-hero.style.backgroundPosition =
-`center ${offset * 0.35}px`;
+        banner.style.transform = `translateY(${offset * .18}px)`;
 
-});
-
-}
-
-
-/*====================================================
-
-ACTIVE NAVIGATION
-
-====================================================*/
-
-const sections = document.querySelectorAll("section");
-
-const navLinks = document.querySelectorAll(".navigation a");
-
-window.addEventListener("scroll",()=>{
-
-let current = "";
-
-sections.forEach(section=>{
-
-const sectionTop = section.offsetTop - 150;
-const sectionHeight = section.offsetHeight;
-
-if(window.scrollY >= sectionTop){
-
-current = section.getAttribute("id");
+    });
 
 }
 
-});
 
-navLinks.forEach(link=>{
+/*========================================================
 
-link.classList.remove("active");
+SMOOTH ANCHORS
 
-if(current && link.getAttribute("href").includes(current)){
-
-link.classList.add("active");
-
-}
-
-});
-
-});
-
-
-/*====================================================
-
-SMOOTH ANCHOR LINKS
-
-====================================================*/
+========================================================*/
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 
-anchor.addEventListener("click",function(e){
+    anchor.addEventListener("click",function(e){
 
-e.preventDefault();
+        e.preventDefault();
 
-const target = document.querySelector(this.getAttribute("href"));
+        const target = document.querySelector(this.getAttribute("href"));
 
-if(target){
+        if(target){
 
-target.scrollIntoView({
+            target.scrollIntoView({
 
-behavior:"smooth",
+                behavior:"smooth"
 
-block:"start"
+            });
 
-});
+        }
 
-}
-
-});
+    });
 
 });
 
 
-/*====================================================
+/*========================================================
 
-BUTTON RIPPLE EFFECT
+ACTIVE PAGE
 
-====================================================*/
+========================================================*/
+
+const currentPage = location.pathname.split("/").pop();
+
+document.querySelectorAll(".navigation a").forEach(link=>{
+
+    if(link.getAttribute("href") === currentPage){
+
+        link.classList.add("active");
+
+    }
+
+});
+
+
+/*========================================================
+
+BUTTON RIPPLE
+
+========================================================*/
 
 document.querySelectorAll(".button").forEach(button=>{
 
-button.addEventListener("click",function(e){
+    button.addEventListener("click",function(e){
 
-const ripple = document.createElement("span");
+        const ripple = document.createElement("span");
 
-const rect = this.getBoundingClientRect();
+        const rect = this.getBoundingClientRect();
 
-const size = Math.max(rect.width,rect.height);
+        const size = Math.max(rect.width, rect.height);
 
-ripple.style.width = size + "px";
+        ripple.style.width = ripple.style.height = size + "px";
 
-ripple.style.height = size + "px";
+        ripple.style.left = e.clientX - rect.left - size/2 + "px";
 
-ripple.style.left =
-e.clientX - rect.left - size/2 + "px";
+        ripple.style.top = e.clientY - rect.top - size/2 + "px";
 
-ripple.style.top =
-e.clientY - rect.top - size/2 + "px";
+        ripple.classList.add("ripple");
 
-ripple.classList.add("ripple");
+        this.appendChild(ripple);
 
-this.appendChild(ripple);
+        setTimeout(()=>{
 
-setTimeout(()=>{
+            ripple.remove();
 
-ripple.remove();
+        },600);
 
-},600);
-
-});
+    });
 
 });
 
 
-/*====================================================
+/*========================================================
 
-KEYBOARD ACCESSIBILITY
+LAZY LOADING
 
-====================================================*/
-
-document.addEventListener("keyup",(event)=>{
-
-if(event.key==="Escape"){
-
-navigation.classList.remove("active");
-
-if(navToggle){
-
-navToggle.classList.remove("active");
-
-}
-
-}
-
-});
-
-
-/*====================================================
-
-LAZY IMAGE ENHANCEMENTS
-
-====================================================*/
+========================================================*/
 
 document.querySelectorAll("img").forEach(image=>{
 
-image.setAttribute("loading","lazy");
+    image.loading = "lazy";
 
-image.setAttribute("decoding","async");
-
-});
-
-
-/*====================================================
-
-CURRENT YEAR
-
-====================================================*/
-
-function initializeCurrentYear(){
-
-const copyright = document.querySelector(".copyright");
-
-if(copyright){
-
-const year = new Date().getFullYear();
-
-copyright.innerHTML =
-`© ${year} Bradley Hobbs. All Rights Reserved.`;
-
-}
-
-}
-
-
-/*====================================================
-
-PERFORMANCE
-
-====================================================*/
-
-window.addEventListener("pageshow",()=>{
-
-document.body.classList.add("loaded");
+    image.decoding = "async";
 
 });
 
 
-/*====================================================
+/*========================================================
 
-PREVENT DOUBLE TAP ON BUTTONS
+ESC KEY CLOSES MENU
 
-====================================================*/
+========================================================*/
 
-let clicked = false;
+document.addEventListener("keyup",(event)=>{
 
-document.querySelectorAll(".button").forEach(button=>{
+    if(event.key==="Escape"){
 
-button.addEventListener("click",(e)=>{
+        document.querySelector(".navigation").classList.remove("active");
 
-if(clicked){
+        document.querySelector(".nav-toggle").classList.remove("active");
 
-e.preventDefault();
-
-return;
-
-}
-
-clicked = true;
-
-setTimeout(()=>{
-
-clicked = false;
-
-},500);
-
-});
+    }
 
 });
 
 
-/*====================================================
+/*========================================================
 
-CONSOLE MESSAGE
+CONSOLE
 
-====================================================*/
+========================================================*/
 
 console.log(
+
 "%cChanged",
-"font-size:26px;font-weight:bold;color:#65459d;"
+
+"color:#65459d;font-size:26px;font-weight:bold;"
+
 );
 
 console.log(
-"%cA Journey of Faith. A Life Transformed. A Purpose Revealed.",
-"font-size:14px;color:#2b9db7;"
+
+"%cA Journey of Faith • A Life Transformed • A Purpose Revealed",
+
+"color:#2c9eb8;font-size:14px;"
+
 );
 
 
-/*====================================================
+/*========================================================
 
 END OF FILE
 
-home.js
-Version 1.0
-
-====================================================*/
+========================================================*/
