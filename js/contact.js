@@ -9,7 +9,6 @@ Version: 1.0
 
 ========================================================*/
 
-
 document.addEventListener("DOMContentLoaded",()=>{
 
 
@@ -51,7 +50,7 @@ navToggle.classList.toggle("active");
 
 /*========================================================
 
-CLOSE MENU WHEN LINK CLICKED
+CLOSE MOBILE MENU
 
 ========================================================*/
 
@@ -59,9 +58,17 @@ document.querySelectorAll(".navigation a").forEach(link=>{
 
 link.addEventListener("click",()=>{
 
+if(navigation){
+
 navigation.classList.remove("active");
 
+}
+
+if(navToggle){
+
 navToggle.classList.remove("active");
+
+}
 
 });
 
@@ -70,11 +77,11 @@ navToggle.classList.remove("active");
 
 /*========================================================
 
-ESC KEY CLOSES MENU
+ESCAPE KEY
 
 ========================================================*/
 
-document.addEventListener("keydown",(event)=>{
+document.addEventListener("keydown",event=>{
 
 if(event.key==="Escape"){
 
@@ -89,11 +96,13 @@ navToggle.classList.remove("active");
 
 /*========================================================
 
-STICKY NAVBAR
+SCROLL EVENTS
 
 ========================================================*/
 
 window.addEventListener("scroll",()=>{
+
+/* Sticky Navbar */
 
 if(window.scrollY>30){
 
@@ -105,39 +114,19 @@ navbar.classList.remove("scrolled");
 
 }
 
-});
 
+/* Reading Progress */
 
-/*========================================================
-
-READING PROGRESS BAR
-
-========================================================*/
-
-function updateProgressBar(){
-
-const scrollPosition=document.documentElement.scrollTop;
+const scrollTopPosition=document.documentElement.scrollTop;
 
 const pageHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
 
-const progress=(scrollPosition/pageHeight)*100;
+const progress=(scrollTopPosition/pageHeight)*100;
 
 progressBar.style.width=progress+"%";
 
-}
 
-window.addEventListener("scroll",updateProgressBar);
-
-updateProgressBar();
-
-
-/*========================================================
-
-SCROLL TO TOP BUTTON
-
-========================================================*/
-
-function toggleScrollTop(){
+/* Scroll Button */
 
 if(window.scrollY>500){
 
@@ -149,12 +138,14 @@ scrollTop.classList.remove("show");
 
 }
 
-}
+});
 
-window.addEventListener("scroll",toggleScrollTop);
 
-toggleScrollTop();
+/*========================================================
 
+SCROLL TO TOP
+
+========================================================*/
 
 scrollTop.addEventListener("click",()=>{
 
@@ -171,11 +162,11 @@ behavior:"smooth"
 
 /*========================================================
 
-FADE ANIMATIONS
+FADE IN ANIMATION
 
 ========================================================*/
 
-const observer=new IntersectionObserver((entries)=>{
+const observer=new IntersectionObserver(entries=>{
 
 entries.forEach(entry=>{
 
@@ -203,114 +194,6 @@ document.querySelectorAll(
 section.classList.add("fade-up");
 
 observer.observe(section);
-
-});
-
-
-/*========================================================
-
-ACTIVE NAVIGATION
-
-========================================================*/
-
-const currentPage=window.location.pathname.split("/").pop();
-
-document.querySelectorAll(".navigation a").forEach(link=>{
-
-if(link.getAttribute("href")===currentPage){
-
-link.classList.add("active");
-
-}
-
-});
-
-
-/*========================================================
-
-SMOOTH INTERNAL LINKS
-
-========================================================*/
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-
-anchor.addEventListener("click",function(event){
-
-event.preventDefault();
-
-const target=document.querySelector(this.getAttribute("href"));
-
-if(target){
-
-target.scrollIntoView({
-
-behavior:"smooth",
-
-block:"start"
-
-});
-
-}
-
-});
-
-});
-
-
-/*========================================================
-
-CONTACT CARD HOVER EFFECTS
-
-========================================================*/
-
-document.querySelectorAll(".contact-card").forEach(card=>{
-
-card.addEventListener("mouseenter",()=>{
-
-card.style.transform="translateY(-10px)";
-
-card.style.boxShadow="0 30px 80px rgba(0,0,0,.18)";
-
-card.style.transition=".35s ease";
-
-});
-
-card.addEventListener("mouseleave",()=>{
-
-card.style.transform="translateY(0)";
-
-card.style.boxShadow="";
-
-});
-
-});
-
-
-/*========================================================
-
-FEATURE BOX HOVER EFFECTS
-
-========================================================*/
-
-document.querySelectorAll(
-
-".encouragement-box,.scripture-callout"
-
-).forEach(box=>{
-
-box.addEventListener("mouseenter",()=>{
-
-box.style.transform="translateY(-8px)";
-
-box.style.transition=".35s ease";
-
-});
-
-box.addEventListener("mouseleave",()=>{
-
-box.style.transform="translateY(0)";
-
-});
 
 });
 
@@ -346,6 +229,89 @@ quote.style.transform="translateY(0)";
 });
 
 quoteObserver.observe(quote);
+
+});
+
+
+/*========================================================
+
+CARD HOVER EFFECT
+
+========================================================*/
+
+document.querySelectorAll(
+
+".contact-card,.encouragement-box,.scripture-callout"
+
+).forEach(card=>{
+
+card.addEventListener("mouseenter",()=>{
+
+card.style.transform="translateY(-8px)";
+
+card.style.transition=".35s ease";
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.transform="translateY(0)";
+
+});
+
+});
+
+
+/*========================================================
+
+ACTIVE PAGE
+
+========================================================*/
+
+const currentPage=window.location.pathname.split("/").pop();
+
+document.querySelectorAll(".navigation a").forEach(link=>{
+
+if(link.getAttribute("href")===currentPage){
+
+link.classList.add("active");
+
+}
+
+});
+
+
+/*========================================================
+
+SMOOTH ANCHOR LINKS
+
+========================================================*/
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+anchor.addEventListener("click",function(event){
+
+event.preventDefault();
+
+const target=document.querySelector(
+
+this.getAttribute("href")
+
+);
+
+if(target){
+
+target.scrollIntoView({
+
+behavior:"smooth",
+
+block:"start"
+
+});
+
+}
+
+});
 
 });
 
