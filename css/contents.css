@@ -1031,12 +1031,19 @@ color:var(--purple);
 
 
 /*========================================================
+
 CHAPTER NAVIGATION
+
 ========================================================*/
 
 .chapter-navigation{
 
-background:var(--cream);
+background:
+linear-gradient(
+180deg,
+var(--ivory),
+var(--cream)
+);
 
 padding:90px 0;
 
@@ -1113,8 +1120,6 @@ color:var(--navy);
 .previous{
 
 text-align:left;
-
-align-items:flex-start;
 
 }
 
