@@ -453,13 +453,13 @@ HERO
 
 .hero{
 
-padding:0;
+padding:30px 0 50px;
 
 margin:0;
 
 line-height:0;
 
-background:transparent;
+background:var(--ivory);
 
 }
 
@@ -467,11 +467,17 @@ background:transparent;
 
 display:block;
 
-width:100%;
+width:min(90%,1100px);
+
+max-width:1100px;
 
 height:auto;
 
-box-shadow:none;
+margin:0 auto;
+
+border-radius:var(--radius);
+
+box-shadow:0 20px 60px rgba(0,0,0,.12);
 
 }
 
@@ -1318,6 +1324,20 @@ padding:45px 30px;
 }
 
 @media (max-width:640px){
+
+.hero{
+
+padding:20px 0 35px;
+
+}
+
+.hero-banner{
+
+width:94%;
+
+border-radius:12px;
+
+}
 
 body{
 
