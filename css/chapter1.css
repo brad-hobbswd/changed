@@ -2,7 +2,7 @@
 
 CHANGED
 
-CHAPTER ONE STYLESHEET
+AUTHOR'S NOTE STYLESHEET
 
 Author: Bradley Hobbs
 Version: 1.0
@@ -129,7 +129,7 @@ z-index:-1;
 
 /*========================================================
 
-GLOBAL TYPOGRAPHY
+TYPOGRAPHY
 
 ========================================================*/
 
@@ -176,20 +176,6 @@ margin-bottom:28px;
 
 }
 
-em{
-
-font-family:"Cormorant Garamond",serif;
-
-font-style:italic;
-
-}
-
-strong{
-
-font-weight:700;
-
-}
-
 a{
 
 text-decoration:none;
@@ -219,6 +205,20 @@ height:auto;
 ul{
 
 list-style:none;
+
+}
+
+em{
+
+font-family:"Cormorant Garamond",serif;
+
+font-style:italic;
+
+}
+
+strong{
+
+font-weight:700;
 
 }
 
@@ -291,7 +291,7 @@ z-index:3000;
 
 /*========================================================
 
-NAVBAR
+NAVIGATION
 
 ========================================================*/
 
@@ -315,7 +315,7 @@ z-index:2000;
 
 .navbar.scrolled{
 
-background:rgba(255,253,249,.97);
+background:rgba(255,253,249,.96);
 
 }
 
@@ -361,7 +361,7 @@ color:var(--gold);
 
 /*========================================================
 
-NAVIGATION
+NAVIGATION LINKS
 
 ========================================================*/
 
@@ -403,11 +403,12 @@ height:2px;
 
 background:var(--gold);
 
-transition:.35s ease;
+transition:.35s;
 
 }
 
 .navigation a:hover::after,
+
 .navigation a.active::after{
 
 width:100%;
@@ -423,7 +424,7 @@ color:var(--purple);
 
 /*========================================================
 
-MOBILE NAVIGATION
+MOBILE NAVIGATION BUTTON
 
 ========================================================*/
 
@@ -466,7 +467,7 @@ HERO
 
 .hero{
 
-padding:0;
+padding:30px 0 50px;
 
 margin:0;
 
@@ -480,9 +481,15 @@ background:var(--ivory);
 
 display:block;
 
-width:100%;
+width:min(90%,1100px);
+
+max-width:1100px;
 
 height:auto;
+
+margin:0 auto;
+
+border-radius:var(--radius);
 
 box-shadow:0 20px 60px rgba(0,0,0,.12);
 
@@ -495,13 +502,14 @@ END OF PART 1
 
 ========================================================*/
 
+
 /*========================================================
 
-CHAPTER HEADER
+AUTHOR'S NOTE HEADER
 
 ========================================================*/
 
-.chapter-header{
+.authors-note-header{
 
 text-align:center;
 
@@ -549,28 +557,6 @@ color:var(--gray);
 
 }
 
-.chapter-meta{
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-flex-wrap:wrap;
-
-gap:18px;
-
-margin-top:35px;
-
-font-weight:600;
-
-color:var(--purple);
-
-letter-spacing:1px;
-
-}
-
 .chapter-divider{
 
 width:140px;
@@ -598,17 +584,17 @@ transparent
 
 /*========================================================
 
-CHAPTER CONTENT
+AUTHOR'S NOTE CONTENT
 
 ========================================================*/
 
-.chapter-content{
+.authors-note-content{
 
 background:var(--white);
 
 }
 
-.chapter-content p{
+.authors-note-content p{
 
 max-width:760px;
 
@@ -637,9 +623,9 @@ font-size:2.2rem;
 
 font-style:italic;
 
-line-height:1.6;
-
 text-align:center;
+
+line-height:1.6;
 
 color:var(--purple);
 
@@ -685,7 +671,7 @@ REFLECTION HEADINGS
 
 text-align:center;
 
-margin:70px auto 35px;
+margin:65px auto 35px;
 
 color:var(--navy);
 
@@ -702,11 +688,11 @@ color:var(--gold);
 
 /*========================================================
 
-CHAPTER CALLOUT
+AUTHOR'S NOTE BOX
 
 ========================================================*/
 
-.chapter-callout{
+.authors-note-box{
 
 margin:80px auto;
 
@@ -726,19 +712,19 @@ var(--teal)
 
 );
 
-color:var(--white);
+box-shadow:var(--shadow-large);
 
 text-align:center;
 
-box-shadow:var(--shadow-large);
+color:var(--white);
 
 }
 
-.callout-label{
+.authors-note-label{
 
 display:inline-block;
 
-margin-bottom:18px;
+margin-bottom:20px;
 
 font-size:.9rem;
 
@@ -748,11 +734,11 @@ letter-spacing:4px;
 
 text-transform:uppercase;
 
-color:rgba(255,255,255,.82);
+color:rgba(255,255,255,.80);
 
 }
 
-.chapter-callout h2{
+.authors-note-box h2{
 
 color:var(--white);
 
@@ -760,7 +746,7 @@ margin-bottom:30px;
 
 }
 
-.chapter-callout p{
+.authors-note-box p{
 
 max-width:700px;
 
@@ -793,11 +779,11 @@ border-radius:var(--radius);
 
 background:var(--ivory);
 
-border:1px solid var(--border);
-
 box-shadow:var(--shadow);
 
 text-align:center;
+
+border:1px solid var(--border);
 
 }
 
@@ -805,7 +791,7 @@ text-align:center;
 
 display:inline-block;
 
-margin-bottom:18px;
+margin-bottom:20px;
 
 font-size:.9rem;
 
@@ -948,9 +934,9 @@ text-align:left;
 
 .center-link{
 
-text-align:center;
-
 align-items:center;
+
+text-align:center;
 
 }
 
@@ -1188,6 +1174,12 @@ padding:90px 0;
 
 }
 
+.nav-toggle{
+
+display:block;
+
+}
+
 .navigation{
 
 position:fixed;
@@ -1230,12 +1222,6 @@ color:var(--navy)!important;
 
 }
 
-.nav-toggle{
-
-display:block;
-
-}
-
 .chapter-navigation .container{
 
 grid-template-columns:1fr;
@@ -1254,7 +1240,7 @@ align-items:center;
 
 }
 
-.chapter-callout,
+.authors-note-box,
 .scripture-callout{
 
 padding:50px 35px;
@@ -1277,6 +1263,20 @@ MOBILE
 ========================================================*/
 
 @media (max-width:640px){
+
+.hero{
+
+padding:20px 0 35px;
+
+}
+
+.hero-banner{
+
+width:94%;
+
+border-radius:12px;
+
+}
 
 body{
 
@@ -1322,19 +1322,11 @@ font-size:1.05rem;
 
 }
 
-.chapter-meta{
-
-gap:10px;
-
-font-size:.9rem;
-
-}
-
 blockquote{
 
-font-size:1.7rem;
+font-size:1.65rem;
 
-padding:0;
+margin:45px auto;
 
 }
 
@@ -1346,7 +1338,7 @@ padding-right:10px;
 
 }
 
-.chapter-callout,
+.authors-note-box,
 .scripture-callout{
 
 padding:40px 25px;
@@ -1417,6 +1409,12 @@ UTILITY CLASSES
 .hidden{
 
 display:none;
+
+}
+
+.text-center{
+
+text-align:center;
 
 }
 
@@ -1519,12 +1517,10 @@ END OF FILE
 
 CHANGED
 
-CHAPTER ONE STYLESHEET
+AUTHOR'S NOTE STYLESHEET
 
-Author:
-Bradley Hobbs
+Author: Bradley Hobbs
 
-Version:
-1.0
+Version: 1.0
 
 ========================================================*/
