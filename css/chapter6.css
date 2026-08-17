@@ -356,6 +356,14 @@ gap:38px;
 
 }
 
+.navigation li{
+
+display:flex;
+
+align-items:center;
+
+}
+
 .navigation a{
 
 font-weight:600;
@@ -809,6 +817,8 @@ CHAPTER NAVIGATION
 ========================================================*/
 
 .chapter-navigation{
+
+padding:90px 0;
 
 background:
 
