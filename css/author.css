@@ -260,7 +260,7 @@ position:sticky;
 
 top:0;
 
-background:rgba(255,253,249,.96);
+background:rgba(255,253,249,.97);
 
 backdrop-filter:blur(16px);
 
@@ -276,7 +276,7 @@ transition:var(--transition);
 
 .navbar.scrolled{
 
-background:rgba(255,255,255,.96);
+background:rgba(255,253,249,.97);
 
 }
 
@@ -288,7 +288,7 @@ justify-content:space-between;
 
 align-items:center;
 
-padding:22px 0;
+padding:20px 0;
 
 }
 
@@ -318,7 +318,7 @@ display:flex;
 
 align-items:center;
 
-gap:36px;
+gap:38px;
 
 }
 
