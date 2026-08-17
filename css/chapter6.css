@@ -86,6 +86,8 @@ overflow-x:hidden;
 
 -webkit-font-smoothing:antialiased;
 
+padding-top:82px;
+
 }
 
 
@@ -278,13 +280,18 @@ z-index:3000;
 
 /*========================================================
 NAVBAR
+MATCHES LANDING.CSS
 ========================================================*/
 
 .navbar{
 
-position:sticky;
+position:fixed;
 
 top:0;
+
+left:0;
+
+width:100%;
 
 background:rgba(248,243,234,.97);
 
@@ -296,6 +303,8 @@ box-shadow:0 8px 30px rgba(0,0,0,.08);
 
 z-index:2000;
 
+transition:var(--transition);
+
 }
 
 .navbar.scrolled{
@@ -305,6 +314,10 @@ background:rgba(255,253,249,.97);
 }
 
 .navbar .container{
+
+width:min(92%,var(--width));
+
+margin:auto;
 
 display:flex;
 
@@ -1231,6 +1244,19 @@ MOBILE
 
 @media (max-width:640px){
 
+
+body{
+
+padding-top:74px;
+
+}
+
+.navbar .container{
+
+padding:16px 0;
+
+}
+
 .hero{
 
 padding:20px 0 35px;
@@ -1344,6 +1370,23 @@ font-size:1.2rem;
 
 }
 
+
+
+/*========================================================
+MOBILE NAVIGATION POSITION
+========================================================*/
+
+@media (max-width:900px){
+
+.navigation{
+
+top:74px;
+
+height:calc(100vh - 74px);
+
+}
+
+}
 
 /*========================================================
 ACCESSIBILITY
