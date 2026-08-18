@@ -66,7 +66,9 @@ Changed
 
 <button
 class="nav-toggle"
-aria-label="Open Navigation">
+aria-label="Open Navigation"
+aria-expanded="false"
+aria-controls="navigation">
 
 <span></span>
 
@@ -76,24 +78,23 @@ aria-label="Open Navigation">
 
 </button>
 
-<ul class="navigation">
+<ul class="navigation" id="navigation">
 
 <li><a href="index.html">Home</a></li>
 
-<li><a href="about.html"
-class="active">About the Book</a></li>
-
-<li><a href="dedication.html">Dedication</a></li>
-
-<li><a href="authors-note.html">Author's Note</a></li>
+<li>
+<a href="about.html" class="active" aria-current="page">
+About
+</a>
+</li>
 
 <li><a href="preface.html">Preface</a></li>
 
 <li><a href="introduction.html">Introduction</a></li>
 
-<li><a href="contents.html">Table of Contents</a></li>
+<li><a href="contents.html">Contents</a></li>
 
-<li><a href="author.html">About the Author</a></li>
+<li><a href="author.html">Author</a></li>
 
 <li><a href="contact.html">Contact</a></li>
 
