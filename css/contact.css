@@ -2178,3 +2178,34 @@ footer{margin-top:0;}
   .contact-content .scripture-callout .scripture-reference{color:var(--gold-light) !important;}
   .encouragement-box{padding:28px 22px;}
 }
+
+
+
+/* Unified banner and navigation frame */
+header#top .hero{
+  padding-bottom:0 !important;
+}
+header#top .hero-banner{
+  display:block;
+  width:min(92%,1100px);
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:20px 20px 0 0 !important;
+  background:none !important;
+  box-shadow:0 12px 30px rgba(29,41,71,.10);
+}
+header#top .navbar{
+  width:min(92%,1100px);
+  margin:0 auto;
+  border:0 !important;
+  border-top:0 !important;
+  border-radius:0 0 14px 14px !important;
+  box-shadow:0 16px 35px rgba(29,41,71,.10);
+}
+@media(max-width:760px){
+  header#top .hero{padding-top:14px !important;padding-bottom:0 !important;}
+  header#top .hero-banner{width:94%;border-radius:12px 12px 0 0 !important;}
+  header#top .navbar{width:94%;border-radius:0 0 10px 10px !important;}
+}
