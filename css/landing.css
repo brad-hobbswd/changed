@@ -2214,3 +2214,51 @@ footer .copyright span{display:inline;}
   .author-preview .author-content .section-label{font-size:.72rem;letter-spacing:.12em;}
   .author-preview .author-content h2{font-size:clamp(1.45rem,6vw,2rem);}
 }
+
+
+
+/* Homepage author actions: compact, balanced buttons */
+.author-preview .author-content .button-group{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-start;
+  align-items:center;
+  gap:14px;
+  clear:both;
+  padding-top:12px;
+}
+.author-preview .author-content .button-group .button{
+  display:inline-flex !important;
+  flex:0 0 auto !important;
+  width:auto !important;
+  min-width:160px;
+  max-width:max-content;
+  min-height:52px !important;
+  height:auto !important;
+  padding:14px 28px !important;
+  margin:0 !important;
+  border-radius:999px !important;
+  font-size:.95rem;
+  line-height:1.25;
+  justify-content:center;
+  align-items:center;
+  white-space:nowrap;
+  box-shadow:0 8px 20px rgba(29,41,71,.10);
+}
+@media(max-width:760px){
+ .author-preview .author-content .button-group{justify-content:flex-start;gap:12px;}
+ .author-preview .author-content .button-group .button{
+   min-width:145px;
+   min-height:48px !important;
+   padding:12px 22px !important;
+   font-size:.9rem;
+ }
+}
+@media(max-width:480px){
+ .author-preview .author-content .button-group{gap:10px;}
+ .author-preview .author-content .button-group .button{
+   min-width:0;
+   padding:12px 18px !important;
+   font-size:.86rem;
+ }
+}
