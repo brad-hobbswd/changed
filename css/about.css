@@ -2403,3 +2403,68 @@ footer{margin-top:0;}
  .chapter-navigation{padding-top:24px !important;padding-bottom:24px !important;}
  .chapter-link{min-height:82px;padding:18px;}
 }
+
+
+
+/* =========================================================
+   ABOUT PAGE: TEXT WRAPS AROUND THE BOOK COVER
+========================================================= */
+.book-layout{
+  display:block;
+  width:100%;
+  max-width:100%;
+}
+.book-cover{
+  float:left;
+  width:min(38%,330px);
+  margin:0 38px 24px 0;
+  position:relative;
+}
+.book-cover img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:100%;
+  margin:0;
+  object-fit:contain;
+}
+.book-information{
+  display:block;
+  width:auto;
+  max-width:none;
+  min-width:0;
+}
+.book-information blockquote{
+  margin-top:0;
+}
+.book-details,
+.book-information .button{
+  clear:both;
+}
+.book-details{
+  display:grid;
+}
+@media(max-width:700px){
+  .book-cover{
+    float:left;
+    width:min(44%,220px);
+    margin:0 20px 16px 0;
+  }
+  .book-information blockquote{
+    font-size:1.45rem;
+    line-height:1.45;
+    padding:0 0 18px;
+  }
+  .book-information p{
+    text-align:left;
+  }
+}
+@media(max-width:420px){
+  .book-cover{
+    width:42%;
+    margin-right:14px;
+  }
+  .book-information blockquote{
+    font-size:1.2rem;
+  }
+}
