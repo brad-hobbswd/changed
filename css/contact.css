@@ -2005,3 +2005,176 @@ footer{margin-top:0;}
  .encouragement-box,.scripture-callout{padding:28px 22px;}
  .contact-content p,.ministry p{line-height:1.8;}
 }
+
+
+
+/* =========================================================
+   CONTACT PAGE: RESTORE CLEAR SECTION STYLING AND CONTRAST
+========================================================= */
+.contact-header{
+  padding:clamp(42px,6vw,76px) 0 clamp(34px,4vw,52px);
+}
+.contact-header .container{
+  width:min(900px,90%);
+  margin:0 auto;
+}
+.contact-header h1{
+  margin:0 auto 22px;
+  color:var(--navy);
+  text-align:center;
+  line-height:1.2;
+}
+.contact-header .chapter-subtitle{
+  max-width:760px;
+  margin:0 auto 28px;
+  text-align:center;
+  line-height:1.8;
+}
+.contact-header .chapter-meta{
+  margin:22px auto 28px;
+  color:var(--purple);
+  font-size:.78rem;
+  letter-spacing:.12em;
+}
+.contact-content{
+  padding:clamp(34px,5vw,64px) 0 !important;
+  background:var(--cream);
+}
+.contact-content>.container{
+  width:min(860px,90%);
+  max-width:860px;
+  margin:0 auto;
+}
+.contact-content> .container > p:not(.drop-cap){
+  max-width:68ch;
+  margin-left:auto;
+  margin-right:auto;
+  line-height:1.85;
+}
+.contact-content blockquote:not(.scripture){
+  max-width:760px;
+  margin:0 auto 38px;
+  padding:clamp(24px,4vw,40px);
+  border-left:4px solid var(--gold);
+  border-radius:0 14px 14px 0;
+  background:var(--ivory);
+  color:var(--purple);
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(1.5rem,3vw,2.1rem);
+  line-height:1.55;
+  text-align:center;
+  box-shadow:var(--shadow);
+}
+.contact-content .reflection-heading{
+  max-width:780px;
+  margin:clamp(34px,5vw,58px) auto 24px;
+  color:var(--navy);
+  text-align:center;
+  line-height:1.25;
+}
+.contact-content .reflection-heading::after,
+.ministry h2::after{
+  content:"";
+  display:block;
+  width:76px;
+  height:3px;
+  margin:16px auto 0;
+  background:var(--gold);
+}
+.encouragement-box{
+  margin:clamp(34px,5vw,58px) auto;
+  padding:clamp(28px,5vw,56px);
+  border-radius:18px;
+  background:linear-gradient(135deg,var(--purple),var(--teal));
+  color:var(--white);
+  text-align:center;
+  box-shadow:var(--shadow-large);
+}
+.encouragement-label{
+  display:block;
+  margin:0 auto 18px;
+  color:var(--gold-light);
+  font-size:.82rem;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-align:center;
+}
+.encouragement-box h2{
+  margin:0 auto 24px;
+  color:var(--white);
+  text-align:center;
+}
+.encouragement-box h2::after{display:none;}
+.encouragement-box p:not(.encouragement-label){
+  max-width:66ch;
+  margin:0 auto 20px;
+  color:rgba(255,255,255,.96);
+  line-height:1.8;
+  text-align:center;
+}
+.contact-content .scripture-callout{
+  margin:clamp(34px,5vw,58px) auto;
+  padding:clamp(30px,5vw,58px);
+  border:1px solid rgba(200,164,93,.45);
+  border-top:4px solid var(--gold);
+  border-radius:16px;
+  background:var(--navy);
+  text-align:center;
+  box-shadow:var(--shadow-large);
+}
+.contact-content .scripture-callout .scripture-label{
+  display:block;
+  color:var(--gold-light) !important;
+  text-align:center;
+}
+.contact-content .scripture-callout blockquote.scripture{
+  max-width:760px;
+  margin:0 auto 28px;
+  padding:0;
+  border:0;
+  background:transparent;
+  color:var(--white) !important;
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(1.55rem,3vw,2.2rem);
+  font-style:italic;
+  line-height:1.65;
+  box-shadow:none;
+}
+.contact-content .scripture-callout .scripture-reference{
+  display:block;
+  margin:0 auto;
+  color:var(--gold-light) !important;
+  font-size:.9rem;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-align:center;
+}
+.ministry{
+  padding:clamp(38px,5vw,66px) 0 !important;
+  background:linear-gradient(180deg,var(--ivory),var(--cream));
+}
+.ministry>.container{
+  width:min(860px,90%);
+  max-width:860px;
+  margin:0 auto;
+}
+.ministry h2{
+  max-width:780px;
+  margin:0 auto 28px;
+  color:var(--navy);
+  text-align:center;
+  line-height:1.25;
+}
+.ministry p{
+  max-width:68ch;
+  margin:0 auto 24px;
+  line-height:1.85;
+}
+@media(max-width:700px){
+  .contact-header,.contact-content,.ministry{padding:32px 0 !important;}
+  .contact-content>.container,.ministry>.container{width:90%;}
+  .contact-grid{grid-template-columns:1fr;gap:16px;}
+  .contact-content .scripture-callout{padding:28px 22px;}
+  .contact-content .scripture-callout .scripture-reference{color:var(--gold-light) !important;}
+  .encouragement-box{padding:28px 22px;}
+}
