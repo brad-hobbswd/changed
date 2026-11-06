@@ -1433,3 +1433,4 @@ header#top .navigation{display:flex !important;position:static !important;inset:
 header#top .navigation li{display:flex !important;flex:1 1 33.333%;min-width:0;}
 header#top .navigation a{display:flex !important;width:100%;justify-content:center;white-space:normal;text-align:center;}
 }
+main{min-width:0;}main section:not(.hero){padding-top:clamp(34px,4.5vw,62px);padding-bottom:clamp(34px,4.5vw,62px);}.chapter-content p,.chapter-content li{max-width:68ch;margin-left:auto;margin-right:auto;line-height:1.85;overflow-wrap:break-word;}.chapter-navigation{padding-top:clamp(28px,4vw,48px)!important;padding-bottom:clamp(28px,4vw,48px)!important;}@media(max-width:760px){main section:not(.hero){padding-top:34px;padding-bottom:34px;}.chapter-content p,.chapter-content li{max-width:64ch;line-height:1.8;}}
