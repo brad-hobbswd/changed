@@ -2468,3 +2468,89 @@ footer{margin-top:0;}
     font-size:1.2rem;
   }
 }
+
+
+
+/* =========================================================
+   ABOUT PAGE FINISHING: RESTORE EDITORIAL HEADING HIERARCHY
+========================================================= */
+.chapter-content{
+  background:var(--cream);
+}
+.chapter-content > .container{
+  width:min(780px,90%);
+  max-width:780px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.chapter-content p:not(.callout-label):not(.scripture-label):not(.scripture-reference){
+  max-width:68ch;
+  margin-left:auto;
+  margin-right:auto;
+  line-height:1.85;
+}
+.chapter-content h2,
+.chapter-content .reflection-heading{
+  max-width:780px;
+  margin:clamp(34px,5vw,58px) auto 24px;
+  text-align:center;
+  color:var(--navy);
+  line-height:1.25;
+}
+.chapter-content h2::after,
+.chapter-content .reflection-heading::after{
+  content:"";
+  display:block;
+  width:76px;
+  height:3px;
+  margin:16px auto 0;
+  background:var(--gold);
+}
+.chapter-content h2.gold,
+.chapter-content .reflection-heading.gold{
+  color:var(--gold);
+}
+.chapter-content .chapter-callout{
+  padding:clamp(30px,5vw,58px);
+  margin:clamp(34px,5vw,58px) auto;
+  border-radius:18px;
+  text-align:center;
+}
+.chapter-content .chapter-callout .callout-label{
+  display:block;
+  max-width:none;
+  margin:0 auto 18px;
+  color:var(--gold-light);
+  font-size:.82rem;
+  font-weight:700;
+  letter-spacing:.2em;
+  line-height:1.5;
+  text-align:center;
+}
+.chapter-content .chapter-callout h2{
+  color:var(--white);
+  margin:0 auto 24px;
+  text-align:center;
+}
+.chapter-content .chapter-callout h2::after{display:none;}
+.chapter-content .chapter-callout p:not(.callout-label){
+  max-width:66ch;
+  margin:0 auto 20px;
+  color:rgba(255,255,255,.96);
+  text-align:center;
+  line-height:1.8;
+}
+.chapter-content .scripture-callout{
+  padding:clamp(30px,5vw,58px);
+  margin:clamp(34px,5vw,58px) auto;
+}
+.chapter-content .scripture-label,
+.chapter-content .scripture-reference{
+  color:var(--gold);
+  text-align:center;
+}
+@media(max-width:700px){
+  .chapter-content > .container{width:90%;}
+  .chapter-content p:not(.callout-label):not(.scripture-label):not(.scripture-reference){line-height:1.8;}
+  .chapter-content .chapter-callout,.chapter-content .scripture-callout{padding:28px 22px;}
+}
