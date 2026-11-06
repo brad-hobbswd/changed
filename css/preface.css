@@ -1769,3 +1769,41 @@ header#top .hero-banner{width:min(92%,1100px);max-height:none;object-fit:contain
 header#top .hero{padding:18px 0 22px;}
 header#top .navbar .container{padding:14px 0;}
 }
+
+
+
+/* =========================================================
+   NO WEAPON STRUCTURAL REFERENCE — CHANGED FRONT PAGES
+   Keep CHANGED's image, palette, and typefaces.
+========================================================= */
+body{background:var(--cream);overflow-x:hidden;}
+header#top{display:flex;flex-direction:column;gap:0;background:var(--ivory);}
+header#top .hero{order:1;width:100%;padding:clamp(18px,3vw,34px) 0 0;margin:0;background:linear-gradient(180deg,var(--ivory),var(--cream));}
+header#top .hero-banner{width:min(92%,1100px);max-width:1100px;max-height:none;object-fit:contain;object-position:center;margin:0 auto;border:1px solid rgba(200,164,93,.55);border-radius:20px;box-shadow:0 22px 58px rgba(29,41,71,.16);}
+header#top .navbar{order:2;position:relative;top:auto;width:min(92%,1100px);margin:0 auto;background:var(--ivory);border:1px solid rgba(200,164,93,.48);border-top:0;border-radius:0 0 14px 14px;box-shadow:0 16px 35px rgba(29,41,71,.10);backdrop-filter:none;-webkit-backdrop-filter:none;}
+header#top .navbar .container{width:100%;min-height:0;display:flex;justify-content:center;align-items:center;padding:0;}
+header#top .logo{display:none;}
+header#top .nav-toggle{display:none !important;}
+header#top .navigation{display:flex !important;position:static !important;visibility:visible !important;opacity:1 !important;transform:none !important;width:100%;height:auto;max-height:none;overflow:visible;flex-direction:row;justify-content:center;align-items:stretch;flex-wrap:wrap;gap:0;margin:0;padding:0;background:transparent;box-shadow:none;border:0;}
+header#top .navigation li{display:flex;align-items:stretch;margin:0;padding:0;}
+header#top .navigation a{display:flex;align-items:center;justify-content:center;min-height:58px;padding:14px clamp(12px,2vw,25px);white-space:nowrap;color:var(--navy);font-size:.82rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border-right:1px solid rgba(200,164,93,.24);}
+header#top .navigation li:last-child a{border-right:0;}
+header#top .navigation a.active,header#top .navigation a[aria-current="page"]{color:var(--purple);background:rgba(200,164,93,.10);}
+header#top .navigation a::after{bottom:7px;left:22%;width:0;}
+header#top .navigation a:hover::after,header#top .navigation a.active::after{width:56%;}
+main{position:relative;}
+footer{margin-top:0;}
+@media(max-width:760px){
+ header#top .hero{padding:14px 0 0;}
+ header#top .hero-banner{width:94%;border-radius:12px;}
+ header#top .navbar{width:94%;border-radius:0 0 10px 10px;}
+ header#top .navigation{justify-content:center;flex-wrap:wrap;}
+ header#top .navigation li{flex:1 1 33.333%;min-width:0;}
+ header#top .navigation a{width:100%;min-height:48px;padding:10px 5px;font-size:.68rem;letter-spacing:.04em;border-bottom:1px solid rgba(200,164,93,.2);}
+ header#top .navigation li:nth-child(3n) a{border-right:0;}
+}
+@media(max-width:430px){
+ header#top .navigation li{flex-basis:50%;}
+ header#top .navigation li:nth-child(3n) a{border-right:1px solid rgba(200,164,93,.2);}
+ header#top .navigation li:nth-child(2n) a{border-right:0;}
+}
