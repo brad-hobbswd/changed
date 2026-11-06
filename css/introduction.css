@@ -1557,3 +1557,20 @@ Author: Bradley Hobbs
 Version: 1.0
 
 ========================================================*/
+
+
+
+/* ========================================================
+   FRONT MATTER LAYOUT
+   Banner first, navigation immediately beneath it.
+   Preserve CHANGED artwork, palette, and typography.
+======================================================== */
+header#top{display:flex;flex-direction:column;}
+header#top .hero{order:1;padding:34px 0 38px;}
+header#top .navbar{order:2;position:relative;top:auto;border-top:1px solid var(--border);border-bottom:1px solid var(--border);box-shadow:0 7px 24px rgba(29,41,71,.07);}
+header#top .navbar .container{min-height:76px;}
+header#top .hero-banner{width:min(92%,1100px);max-height:none;object-fit:contain;border:1px solid rgba(200,164,93,.45);box-shadow:0 22px 58px rgba(29,41,71,.16);}
+@media(max-width:760px){
+header#top .hero{padding:18px 0 22px;}
+header#top .navbar .container{padding:14px 0;}
+}
