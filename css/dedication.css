@@ -1714,3 +1714,13 @@ footer{margin-top:0;}
  header#top .navigation li:nth-child(3n) a{border-right:1px solid rgba(200,164,93,.2);}
  header#top .navigation li:nth-child(2n) a{border-right:0;}
 }
+
+
+/* Tablet and mobile navigation: keep the full menu in document flow */
+header#top .hero-banner{padding:8px;background:linear-gradient(135deg,var(--gold-light),var(--gold) 48%,var(--gold-light));}
+@media(max-width:900px){
+ header#top .nav-toggle{display:none !important;}
+ header#top .navigation{display:flex !important;position:static !important;inset:auto !important;transform:none !important;opacity:1 !important;visibility:visible !important;max-height:none !important;overflow:visible !important;flex-direction:row !important;flex-wrap:wrap !important;justify-content:center !important;width:100% !important;background:transparent !important;box-shadow:none !important;}
+ header#top .navigation li{display:flex !important;flex:1 1 33.333%;min-width:0;}
+ header#top .navigation a{display:flex !important;width:100%;justify-content:center;white-space:normal;text-align:center;}
+}
